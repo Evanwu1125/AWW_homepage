@@ -1,17 +1,9 @@
 <script lang="ts" setup>
-import { h } from 'vue'
 import { ElIcon } from 'element-plus'
-import { Document, Files } from '@element-plus/icons-vue'
-
-// Hugging Face emoji icon
-const HfIcon = {
-  render() {
-    return h('span', { style: 'font-size: 18px; font-style: normal;' }, '🤗')
-  },
-}
+import { Document, Files, DataAnalysis } from '@element-plus/icons-vue'
 
 // Logo path (set to '' to hide)
-const logo = './logo.png'
+const logo = '/VRBench_Web/logo.png'
 
 // Title configuration
 const titleMain = 'VR-Bench'
@@ -76,8 +68,7 @@ const buttons = [
   {
     disabled: false,
     name: 'Dataset',
-    link: 'https://huggingface.co/datasets/amagipeng/VR-Bench',
-    component: HfIcon,
+    component: DataAnalysis,
   },
 ]
 </script>
@@ -143,7 +134,7 @@ const buttons = [
       <span class="con-cor-text">{{ conAndCorresponding }}</span>
     </el-row>
     <el-row justify="center" class="con-cor-logo">
-      <el-image src="/logo_metagpt.png" class="con-logo" fit="contain" />
+      <el-image src="/VRBench_Web/logo_metagpt.png" class="con-logo" fit="contain" />
     </el-row>
 
     <!-- Emphasis block (currently empty) -->

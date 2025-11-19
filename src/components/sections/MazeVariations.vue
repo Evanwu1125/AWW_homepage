@@ -14,7 +14,7 @@
         <el-container class="maze-container">
           <el-image
             class="maze-image"
-            src="/domain_vary.jpg"
+            src="/VRBench_Web/domain_vary.jpg"
             fit="contain"
           />
         </el-container>

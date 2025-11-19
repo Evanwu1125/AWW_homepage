@@ -16,7 +16,6 @@ export default {
   <div>
     <el-container>
       <el-main><Main/></el-main>
-      <el-footer><Footer/></el-footer>
     </el-container>
     
     <!-- 回到顶部 -->

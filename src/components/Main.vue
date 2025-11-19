@@ -6,11 +6,9 @@ import Carousel from './sections/Carousel.vue'
 import Overview from './sections/Overview.vue'
 import Bench from './sections/Bench.vue'
 import MazeVariations from './sections/MazeVariations.vue'
-import ImageSlider from './sections/ImageSlider.vue'
-import ImageSliderInner from './sections/ImageSliderInner.vue'
-import ImageSelector from './sections/ImageSelector.vue'
 import Table from './sections/Table.vue'
-import SeletionForComparison from './sections/SeletionForComparison.vue'
+import PerformanceComparison from './sections/PerformanceComparison.vue'
+import CaseDemonstration from './sections/CaseDemonstration.vue'
 
 export default {
   components: {
@@ -21,11 +19,8 @@ export default {
     Overview,
     Bench,
     MazeVariations,
-    ImageSlider,
-    ImageSliderInner,
-    ImageSelector,
-    Table,
-    SeletionForComparison,
+    PerformanceComparison,
+    CaseDemonstration
   }
 }
 </script>
@@ -35,12 +30,10 @@ export default {
   <Carousel/>
   <Overview/>
   <Abstract/>
+  <MazeVariations/>
   <Table/>
   <Bench/>
-  <MazeVariations/>
-  <SeletionForComparison/>
-  <ImageSliderInner/>
-  <ImageSlider/>
-  <ImageSelector/>
+  <PerformanceComparison/>
+  <CaseDemonstration/>
   <BibTeX/>
 </template>
