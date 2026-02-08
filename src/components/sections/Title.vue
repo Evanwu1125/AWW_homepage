@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { h } from 'vue'
+import { h, ref } from 'vue'
 import { ElIcon } from 'element-plus'
 import { Document, Files, DataAnalysis } from '@element-plus/icons-vue'
 
@@ -14,9 +14,9 @@ const HfIcon = {
 const logo = '/VRBench_Web/logo.png'
 
 // Title configuration
-const titleMain = 'VR-Bench'
+const titleMain = 'AutoWebWorld'
 const titleRest =
-  ": The First Evaluation of Video Models' Reasoning Abilities through Maze-Solving Tasks"
+  ": Synthesizing Infinite Verifiable Web Environments via Finite State Machines"
 const titleColor = '#000000'
 const titleSupp = ''
 const titleSuppColor = '#42B883'
@@ -27,68 +27,77 @@ const btnColor = '#444444'
 // Authors (name, homepage, affiliation flags)
 const authors = [
   {
-    name: 'Cheng Yang',
-    icon: '',
-    homepage: 'https://scholar.google.com/citations?user=y7xaiIgAAAAJ&hl=en',
-    addressFlag: '1*',
-  },
-  {
-    name: 'Haiyuan Wan',
+    name: 'Yifan Wu',
     icon: '',
     homepage: '',
-    addressFlag: '2,3*',
+    addressFlag: '1,2',
   },
   {
     name: 'Yiran Peng',
     icon: '',
     homepage: '',
-    addressFlag: '1*',
+    addressFlag: '2',
   },
-  { name: 'Xin Cheng', icon: '', homepage: '', addressFlag: '4' },
-  { name: 'Zhaoyang Yu', icon: '', homepage: '', addressFlag: '1' },
-  { name: 'Jiayi Zhang', icon: '', homepage: '', addressFlag: '1,8' },
   {
-    name: 'Junchi Yu',
+    name: 'Yiyu Chen',
     icon: '',
-    homepage: 'https://scholar.google.com.hk/citations?user=gg8DmokAAAAJ&hl=en',
-    addressFlag: '5\u2020',
+    homepage: '',
+    addressFlag: '1',
   },
-  { name: 'Xinlei Yu', icon: '', homepage: '', addressFlag: '6' },
+  { name: 'Jianhao Ruan', icon: '', homepage: '', addressFlag: '1,2' },
+  { name: 'Cheng Yang', icon: '', homepage: '', addressFlag: '2' },
+  { name: 'Jiayi Zhang', icon: '', homepage: '', addressFlag: '1,2' },
   {
-    name: 'Xiawu Zheng',
+    name: 'Man Chen',
     icon: '',
-    homepage: 'https://scholar.google.com/citations?user=jBgXocYAAAAJ&hl=zh-CN',
-    addressFlag: '7',
+    homepage: '',
+    addressFlag: '1',
   },
-  { name: 'Dongzhan Zhou', icon: '', homepage: '', addressFlag: '3' },
+  { name: 'Yenchi Tseng', icon: '', homepage: '', addressFlag: '1' },
+  {
+    name: 'Zhaoyang Yu',
+    icon: '',
+    homepage: '',
+    addressFlag: '2',
+  },
+  { name: 'Liang Chen', icon: '', homepage: '', addressFlag: '3' },
+  {
+    name: 'Yuyao Zhai',
+    icon: '',
+    homepage: '',
+    addressFlag: '3',
+  },
+    {
+    name: 'Bang Liu',
+    icon: '',
+    homepage: '',
+    addressFlag: '4',
+  },
   {
     name: 'Chenglin Wu',
     icon: '',
-    homepage: 'https://scholar.google.com/citations?user=nYIj020AAAAJ&hl=zh-CN',
+    homepage: '',
+    addressFlag: '2\u2020',
+  },
+  {
+    name: 'Yuyu Luo',
+    icon: '',
+    homepage: '',
     addressFlag: '1\u2020',
   },
 ]
 
 // Affiliations
 const addresses = [
-  { addressFlag: '1', name: 'DeepWisdom', icon: '', homepage: '' },
-  { addressFlag: '2', name: 'Tsinghua University', icon: '', homepage: '' },
-  { addressFlag: '3', name: 'Shanghai Artificial Intelligence Laboratory', icon: '', homepage: '' },
-  { addressFlag: '4', name: 'Renmin University of China', icon: '', homepage: '' },
-  { addressFlag: '5', name: 'University of Oxford', icon: '', homepage: '' },
-  { addressFlag: '6', name: 'National University of Singapore', icon: '', homepage: '' },
-  { addressFlag: '7', name: 'Xiamen University', icon: '', homepage: '' },
-  {
-    addressFlag: '8',
-    name: 'Hong Kong University of Science and Technology (GuangZhou)',
-    icon: '',
-    homepage: '',
-  },
+  { addressFlag: '1', name: 'Hong Kong University of Science and Technology (GuangZhou)', icon: '', homepage: '' },
+  { addressFlag: '2', name: 'DeepWisdom', icon: '', homepage: '' },
+  { addressFlag: '3', name: 'Beijing University', icon: '', homepage: '' },
+  { addressFlag: '4', name: 'Université de Montréal \& Mila', icon: '', homepage: '' },
 ]
 
 // Author note
 const conAndCorresponding =
-  '* Core Contributor. \u2020 Corresponding Author.'
+  '\u2020 Corresponding Author.'
 
 // Emphasis lines (empty for now, no extra block)
 const emphases: string[] = []
@@ -99,22 +108,28 @@ const buttons = [
   {
     disabled: false,
     name: 'Code',
-    link: 'https://github.com/ImYangC7/VR-Bench',
+    link: 'https://github.com/Evanwu1125/AutoWebWorld',
     component: Files,
   },
-  {
-    disabled: false,
-    name: 'Dataset',
-    link: 'https://huggingface.co/datasets/amagipeng/VR-Bench',
-    component: DataAnalysis,
-  },
-  {
-    disabled: false,
-    name: 'Model',
-    link: 'https://huggingface.co/HY-Wan/Wan-R1',
-    component: HfIcon,
-  },
+  // {
+  //   disabled: false,
+  //   name: 'Dataset',
+  //   link: 'https://huggingface.co/datasets/amagipeng/VR-Bench',
+  //   component: DataAnalysis,
+  // },
+  // {
+  //   disabled: false,
+  //   name: 'Model',
+  //   link: 'https://huggingface.co/HY-Wan/Wan-R1',
+  //   component: HfIcon,
+  // },
 ]
+
+const showDetails = ref(false)
+
+const toggleDetails = () => {
+  showDetails.value = !showDetails.value
+}
 </script>
 
 <template>
@@ -135,51 +150,69 @@ const buttons = [
       </el-col>
     </el-row>
 
-    <!-- Authors -->
-    <el-row justify="center">
-      <a
-        v-for="author in authors"
-        :key="author.name"
-        :href="author.homepage || 'javascript:void(0);'"
-      >
-        <el-button class="title-button" type="primary" text>
-          <el-avatar
-            v-if="author.icon"
-            :size="40"
-            :src="author.icon"
-            class="author-avatar"
-          />
-          <span class="author">
-            {{ author.name
-            }}<sup v-if="author.addressFlag" class="name_sup">{{ author.addressFlag }}</sup>
-          </span>
-        </el-button>
-      </a>
+    <el-row justify="center" class="anonymity-controls">
+      <el-button class="anonymity-button" type="primary" plain @click="toggleDetails">
+        {{ showDetails ? 'Hide author info' : 'Reveal author info' }}
+      </el-button>
     </el-row>
 
-    <!-- Affiliations -->
-    <el-row justify="center">
-      <a
-        v-for="address in addresses"
-        :key="address.name"
-        :href="address.homepage || 'javascript:void(0);'"
-      >
-        <el-button class="title-button" type="primary" text>
-          <span class="address">
-            <sup v-if="address.addressFlag" class="address_sup">{{ address.addressFlag }}</sup>
-            {{ address.name }}
-          </span>
-        </el-button>
-      </a>
-    </el-row>
+    <div class="author-section">
+      <transition name="fade-switch" mode="out-in">
+      <div v-if="showDetails" key="details" class="details-panel">
+        <!-- Authors -->
+        <el-row justify="center">
+          <a
+            v-for="author in authors"
+            :key="author.name"
+            :href="author.homepage || 'javascript:void(0);'"
+          >
+            <el-button class="title-button" type="primary" text>
+              <el-avatar
+                v-if="author.icon"
+                :size="40"
+                :src="author.icon"
+                class="author-avatar"
+              />
+              <span class="author">
+                {{ author.name
+                }}<sup v-if="author.addressFlag" class="name_sup">{{ author.addressFlag }}</sup>
+              </span>
+            </el-button>
+          </a>
+        </el-row>
 
-    <!-- Equal contribution / corresponding note -->
-    <el-row v-if="conAndCorresponding" justify="center" class="con-cor">
-      <span class="con-cor-text">{{ conAndCorresponding }}</span>
-    </el-row>
-    <el-row justify="center" class="con-cor-logo">
-      <el-image src="/VRBench_Web/logo_metagpt.png" class="con-logo" fit="contain" />
-    </el-row>
+        <!-- Affiliations -->
+        <el-row justify="center">
+          <a
+            v-for="address in addresses"
+            :key="address.name"
+            :href="address.homepage || 'javascript:void(0);'"
+          >
+            <el-button class="title-button" type="primary" text>
+              <span class="address">
+                <sup v-if="address.addressFlag" class="address_sup">{{ address.addressFlag }}</sup>
+                {{ address.name }}
+              </span>
+            </el-button>
+          </a>
+        </el-row>
+
+        <!-- Equal contribution / corresponding note -->
+        <el-row v-if="conAndCorresponding" justify="center" class="con-cor">
+          <span class="con-cor-text">{{ conAndCorresponding }}</span>
+        </el-row>
+        <el-row justify="center" class="con-cor-logo">
+          <el-image src="/VRBench_Web/foundation_agent.png" class="con-logo" fit="contain" />
+        </el-row>
+      </div>
+      <div v-else key="mask">
+        <div class="mask-panel">
+          <p>Author and affiliation details are anonymized.</p>
+          <p>Click “Reveal author info” to make them visible.</p>
+        </div>
+      </div>
+      </transition>
+    </div>
 
     <!-- Emphasis block (currently empty) -->
     <el-row
@@ -222,7 +255,7 @@ const buttons = [
 <style scoped>
 /* Title font and layout */
 .paper-title {
-  font-family: 'MyFont', Verdana, sans-serif;
+  font-family: 'Droid Serif', 'Times New Roman', serif;
   letter-spacing: 2px;
   font-size: 42px;
   margin: 32px;
@@ -246,6 +279,56 @@ const buttons = [
   margin: 10px 8px;
 }
 
+.anonymity-controls {
+  margin-top: 10px;
+}
+
+.anonymity-button {
+  min-width: 220px;
+  height: 46px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'Droid Serif', 'Times New Roman', serif;
+  border-radius: 24px;
+  background: #5a5a5a;
+  border-color: #5a5a5a;
+}
+
+.anonymity-button:hover {
+  background: #6f6f6f;
+  border-color: #6f6f6f;
+}
+
+.anonymity-button.is-plain {
+  color: #ffffff;
+}
+
+.author-section {
+  position: relative;
+  margin-top: 10px;
+}
+
+.mask-panel {
+  background: #d3d3d3;
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  font-family: 'Droid Serif', 'Times New Roman', serif;
+  color: #606266;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.fade-switch-enter-active,
+.fade-switch-leave-active {
+  transition: opacity 0.35s ease, filter 0.35s ease;
+}
+
+.fade-switch-enter-from,
+.fade-switch-leave-to {
+  opacity: 0;
+  filter: blur(2px);
+}
+
 /* Resource buttons */
 .guidance-button {
   margin: 8px 5px;
@@ -254,7 +337,7 @@ const buttons = [
 
 /* Author text: bolder and more prominent */
 .author {
-  font-family: 'MyFont', Verdana, sans-serif;
+  font-family: 'Droid Serif', 'Times New Roman', serif;
   font-size: 20px;
   font-weight: 600;
   margin-left: 3px;
@@ -262,14 +345,14 @@ const buttons = [
 
 /* Superscript for authors */
 .name_sup {
-  font-family: 'MyFont', Verdana, sans-serif;
+  font-family: 'Droid Serif', 'Times New Roman', serif;
   color: #606266;
   margin-left: 3px;
 }
 
 /* Affiliation text: different, lighter font */
 .address {
-  font-family: Arial, sans-serif;
+  font-family: 'Droid Serif', 'Times New Roman', serif;
   font-size: 16px;
   font-weight: 400;
 }
@@ -282,7 +365,7 @@ const buttons = [
 
 /* Contribution note */
 .con-cor {
-  font-family: Arial, sans-serif;
+  font-family: 'Droid Serif', 'Times New Roman', serif;
   font-size: 14px;
   margin: 18px 0;
   text-align: center;
@@ -297,8 +380,8 @@ const buttons = [
 }
 
 .con-logo {
-  max-width: 260px;
-  width: 60%;
+  max-width: 360px;
+  width: 80%;
 }
 
 /* Emphasis lines */

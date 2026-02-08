@@ -86,6 +86,7 @@ const tableData = [
 <style scoped>
 .card {
     margin-top: 20px;
+    font-family: 'Times New Roman', 'Times', serif;
 }
 </style>
   

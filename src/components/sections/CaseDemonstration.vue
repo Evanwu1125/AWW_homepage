@@ -1,80 +1,157 @@
 <script setup>
-import { ref, reactive } from 'vue'
-
-const tasks = [
-  { id: 'maze', name: 'Regular Maze', folder: 'maze' },
-  { id: 'graph', name: 'Irregular Maze', folder: 'irregular_maze' },
-  { id: 'maze3d', name: 'Maze 3D', folder: 'maze3d' },
-  { id: 'sokoban', name: 'Sokoban', folder: 'sokoban' },
-  { id: 'trapfield', name: 'Trap Field', folder: 'trapfield' }
+const webGroups = [
+  {
+    id: 'jd',
+    name: 'JD.com',
+    cases: [
+      {
+        id: 'jd-account',
+        query: `Create a new account with username 'alex_jones', password 'MySecurePass123!', and phone number '13987654321'.`,
+        video: '/VRBench_Web/outputs/JD/macro_000_00_HOME__ACCOUNT_CREATED_SUCCESS_item_original/recording.mp4',
+      },
+      {
+        id: 'jd-review',
+        query: `Filter to show only fresh items in the supermarket section, pick the seventh one, leave a 5-star review saying 'These avocados were perfectly ripe and creamy, excellent for guacamole', and submit it.`,
+        video: '/VRBench_Web/outputs/JD/macro_000_00_HOME__REVIEW_SUBMITTED_SUCCESS_item_s7/recording.mp4',
+      },
+      {
+        id: 'jd-checkout',
+        query: 'Buy 3 pieces of the second item priced above $5 from the supermarket section, choose the first option, ship to my usual address with cash on delivery.',
+        video: '/VRBench_Web/outputs/JD/macro_001_00_HOME__CHECKOUT_BUY_NOW_SUCCESS_item_s5/recording.mp4',
+      },
+    ],
+  },
+  {
+    id: 'github',
+    name: 'GitHub',
+    cases: [
+      {
+        id: 'gh-branch',
+        query: 'Navigate to repositories and filter for private ones, then open the first private repository and create a new branch called feature-auth from the main source.',
+        video: '/VRBench_Web/outputs/github/macro_000_00_HOME__NEW_BRANCH_SUCCESS_item_repo_9/recording.mp4',
+      },
+      {
+        id: 'gh-pr',
+        query: `Find my private repositories, open the first one, create a pull request from the feature branch to main with title 'Add user authentication module', and submit it.`,
+        video: '/VRBench_Web/outputs/github/macro_001_00_HOME__PR_CREATE_SUCCESS_item_repo_9/recording.mp4',
+      },
+      {
+        id: 'gh-issue',
+        query: `Create a new issue in the first private repository, title it 'Authentication bug in login flow', and submit it.`,
+        video: '/VRBench_Web/outputs/github/macro_001_00_HOME__ISSUE_CREATE_SUCCESS_item_repo_9/recording.mp4',
+      },
+      {
+        id: 'gh-profile',
+        query: 'Update my profile name to Alex Johnson and save the changes.',
+        video: '/VRBench_Web/outputs/github/macro_002_00_HOME__PROFILE_UPDATE_SUCCESS_item_original/recording.mp4',
+      },
+    ],
+  },
+  {
+    id: 'medium',
+    name: 'Medium',
+    cases: [
+      {
+        id: 'medium-schedule',
+        query: `Start writing a new story, set the title to 'The Midnight Garden', write the body content 'Under the pale moonlight, the old garden whispered secrets only the night could hear. Roses bloomed with silver petals, and the fountain sang a melody of forgotten dreams.', enable publishing, open publish options, continue to confirmation, schedule it for November 18, 2021 at 9:18 AM, and confirm the schedule.`,
+        video: '/VRBench_Web/outputs/medium/macro_000_00_HOME__SCHEDULE_POST_SUCCESS_item_original/recording.mp4',
+      },
+      {
+        id: 'medium-subscription',
+        query: 'Upgrade to the monthly membership plan using card payment with number 4532123456789012, name Alex Johnson, and CVV 789, then complete the purchase.',
+        video: '/VRBench_Web/outputs/medium/macro_000_00_HOME__SUBSCRIPTION_SUCCESS_item_original/recording.mp4',
+      },
+      {
+        id: 'medium-profile',
+        query: 'Update my profile name to John Doe.',
+        video: '/VRBench_Web/outputs/medium/macro_001_00_HOME__PROFILE_UPDATE_SUCCESS_item_original/recording.mp4',
+      },
+      {
+        id: 'medium-publish',
+        query: `Write and publish a story titled 'The Future of Artificial Intelligence' with the body: 'Artificial intelligence is rapidly transforming our world. From self-driving cars to advanced healthcare diagnostics, AI is becoming an integral part of our daily lives. As we look to the future, the potential of AI seems limitless, but it also raises important ethical questions. How can we ensure that AI is developed and used responsibly? This article explores the current state of AI and its future implications.'`,
+        video: '/VRBench_Web/outputs/medium/macro_001_00_HOME__PUBLISH_POST_SUCCESS_item_original/recording.mp4',
+      },
+    ],
+  },
+  {
+    id: 'skyscanner',
+    name: 'Skyscanner',
+    cases: [
+      {
+        id: 'skyscanner-booking',
+        query: 'Find American Airlines flights from LHR to JFK, traveling on September 16, 2029 in economy class. Book the American Airlines flight that comes up in the search results, choose standard baggage and standard seat, then complete the booking with first name Alex, last name Johnson, email alex.j@email.com, and card number 4111111111111111. Accept the terms and confirm the booking.',
+        video: '/VRBench_Web/outputs/skyscanner/macro_001_00_HOME__BOOKING_COMPLETE_DIRECT_item_flight_3/recording.mp4',
+      },
+      {
+        id: 'skyscanner-alert',
+        query: `Find flights from London Heathrow to New York JFK for January 22, 2029 in economy class, then search for Aer Lingus flights in the results, open the matching one, and create a price alert named 'Aer Lingus JFK Alert' with email 'traveler@example.com'.`,
+        video: '/VRBench_Web/outputs/skyscanner/macro_088_00_HOME__PRICE_ALERT_CREATED_item_flight_9/recording.mp4',
+      },
+    ],
+  },
+  {
+    id: 'twitter',
+    name: 'Twitter',
+    cases: [
+      {
+        id: 'twitter-tweet',
+        query: `Compose and post a tweet that says 'Excited to share that I just completed my 100th day of coding! #100DaysOfCode #coding'.`,
+        video: '/VRBench_Web/outputs/twitter/macro_000_00_HOME__TWEET_POST_SUCCESS_item_original/recording.mp4',
+      },
+      {
+        id: 'twitter-profile',
+        query: `Update my profile bio to 'Experienced software engineer specializing in full-stack web development and cloud architecture' and change my display name to 'Alex Chen', then save the changes.`,
+        video: '/VRBench_Web/outputs/twitter/macro_001_00_HOME__PROFILE_UPDATE_SUCCESS_item_original/recording.mp4',
+      },
+    ],
+  },
+  {
+    id: 'youtube',
+    name: 'YouTube',
+    cases: [
+      {
+        id: 'youtube-like',
+        query: 'From trending videos filtered to show ones longer than 3 minutes, watch the fourth video and like it.',
+        video: '/VRBench_Web/outputs/youtube/macro_001_00_HOME__WATCH_LIKE_SUCCESS_item_v4/recording.mp4',
+      },
+      {
+        id: 'youtube-comment',
+        query: `Go to trending videos, allow location access, filter for videos longer than 2000 seconds, open the first one, then post this comment and submit it: 'This music is so calming, perfect for studying. Thanks for uploading!'`,
+        video: '/VRBench_Web/outputs/youtube/macro_001_00_HOME__WATCH_COMMENT_SUCCESS_item_v3/recording.mp4',
+      },
+    ],
+  },
 ]
-
-const models = [
-  { id: 'sora-2', name: 'Sora 2', file: 'sora-2.mp4' },
-  { id: 'veo3_1', name: 'Veo 3.1', file: 'veo3_1.mp4' },
-  { id: 'veo3_1-pro', name: 'Veo 3.1 Pro', file: 'veo3_1-pro.mp4' },
-  { id: 'kling-v1', name: 'Kling-v1', file: 'kling-v1.mp4' },
-  { id: 'wan2.2', name: 'Wan2.2', file: 'wan2.2_baseline.mp4' },
-  { id: 'wan2.1', name: 'Wan2.5', file: 'wan2.5.mp4' },
-  { id: 'wan-r1', name: 'Wan R1', file: 'wanr1.mp4' },
-  { id: 'hunyuan', name: 'Seedance-1.0-Pro', file: 'doubao-seedance-1-0-pro-250528.mp4' },
-  { id: 'cogvideo', name: 'MiniMax-Hailuo-2.3', file: 'MiniMax-Hailuo-2_3.mp4' }
-]
-
-const difficulties = ['easy', 'medium', 'hard']
-
-const taskDifficulties = reactive({})
-tasks.forEach(task => {
-  taskDifficulties[task.id] = 'easy'
-})
-
-const getVideoPath = (taskId, modelFile) => {
-  const task = tasks.find(t => t.id === taskId)
-  const taskFolder = task?.folder || 'irregular_maze'
-  const difficulty = taskDifficulties[taskId] || 'easy'
-  return `/VRBench_Web/video_pre/${taskFolder}/${difficulty}/${modelFile}`
-}
-
-const setTaskDifficulty = (taskId, difficulty) => {
-  taskDifficulties[taskId] = difficulty
-}
 </script>
 
 <template>
   <div class="case-demonstration">
-    <h1 class="section-title">Case Demonstration: Structural Reasoning & Search</h1>
+    <h1 class="section-title">Automatic Verified GUI Trajectory Collection Based on FSM</h1>
 
     <div class="task-rows">
       <div
-        v-for="task in tasks"
-        :key="task.id"
+        v-for="group in webGroups"
+        :key="group.id"
         class="task-row"
       >
         <div class="task-header">
-          <div class="task-label">{{ task.name }}</div>
-          <div class="task-difficulty-selector">
-            <button
-              v-for="diff in difficulties"
-              :key="diff"
-              :class="{ active: taskDifficulties[task.id] === diff }"
-              @click="setTaskDifficulty(task.id, diff)"
-              class="task-diff-btn">
-              {{ diff.charAt(0).toUpperCase() + diff.slice(1) }}
-            </button>
-          </div>
+          <div class="task-label">{{ group.name }}</div>
+          <div class="task-subtitle">Synthetic web tasks & verified trajectories</div>
         </div>
 
         <div class="video-grid">
           <div
-            v-for="model in models"
-            :key="`${task.id}-${model.id}`"
+            v-for="item in group.cases"
+            :key="item.id"
             class="video-card"
           >
-            <div class="model-name">{{ model.name }}</div>
+            <div class="case-query">
+              <span class="query-label">Query</span>
+              <p class="query-text">{{ item.query }}</p>
+            </div>
             <div class="video-wrapper">
               <video
-                :key="`${task.id}-${model.id}-${taskDifficulties[task.id]}`"
-                :src="getVideoPath(task.id, model.file)"
+                :src="item.video"
                 controls
                 preload="metadata"
                 class="video-player"
@@ -144,40 +221,14 @@ const setTaskDifficulty = (taskId, difficulty) => {
   letter-spacing: -0.3px;
 }
 
-.task-difficulty-selector {
-  display: flex;
-  gap: 6px;
-}
-
-.task-diff-btn {
-  padding: 8px 18px;
-  border: 1px solid #d1d1d6;
-  background: #ffffff;
-  color: #1d1d1f;
-  font-size: 13px;
-  font-weight: 500;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.2s;
-  min-width: 75px;
-}
-
-.task-diff-btn:hover {
-  background: #f5f5f7;
-  border-color: #0071e3;
-}
-
-.task-diff-btn.active {
-  background: #0071e3;
-  color: #fff;
-  border-color: #0071e3;
-  font-weight: 600;
-  box-shadow: 0 2px 8px rgba(0, 113, 227, 0.25);
+.task-subtitle {
+  font-size: 14px;
+  color: #6e6e73;
 }
 
 .video-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-direction: column;
   gap: 20px;
   padding: 24px;
   background: #ffffff;
@@ -190,6 +241,10 @@ const setTaskDifficulty = (taskId, difficulty) => {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
   transition: all 0.25s ease;
   border: 1px solid #e8e8ed;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
 }
 
 .video-card:hover {
@@ -198,81 +253,53 @@ const setTaskDifficulty = (taskId, difficulty) => {
   border-color: #0071e3;
 }
 
-.model-name {
-  padding: 12px 14px;
-  font-size: 15px;
-  font-weight: 600;
-  font-style: italic;
-  color: #1d1d1f;
+.case-query {
+  padding: 12px 16px;
   text-align: center;
-  background: #fafafa;
-  border-bottom: 1px solid #e8e8ed;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #f2f2f5 0%, #ffffff 60%);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.query-label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #888888;
+}
+
+.query-text {
+  margin: 6px 0 0;
+  font-size: 15px;
+  color: #1d1d1f;
+  line-height: 1.45;
+  font-weight: 600;
 }
 
 .video-wrapper {
-  position: relative;
   width: 100%;
-  padding-top: 75%;
+  position: relative;
   background: #f0f0f0;
   overflow: hidden;
+  aspect-ratio: 16 / 9;
 }
 
 .video-player {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: contain;
+  background: #000;
 }
 
-.video-placeholder {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #f0f0f0;
+.video-player::cue {
+  font-family: 'Droid Serif', 'Times New Roman', serif;
 }
 
 @media (max-width: 1024px) {
-  .video-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
   .case-demonstration {
     padding: 40px 20px;
   }
-
-  .section-title {
-    font-size: 24px;
-    margin-bottom: 30px;
-  }
-
-  .video-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .task-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-
-  .task-label {
-    font-size: 18px;
-  }
-
-  .task-difficulty-selector {
-    width: 100%;
-    justify-content: flex-start;
-  }
-
-  .task-diff-btn {
-    flex: 1;
-  }
 }
-
 </style>

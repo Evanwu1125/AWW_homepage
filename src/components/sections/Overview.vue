@@ -10,11 +10,11 @@
     </el-row>
 
     <el-row justify="center">
-      <el-col :xs="24" :sm="20" :md="16" :lg="12" :xl="10">
+      <el-col :xs="24" :sm="22" :md="20" :lg="18" :xl="16">
         <el-container class="image-container">
           <el-image
             class="overview-image"
-            src="/VRBench_Web/video reason.svg"
+            src="/VRBench_Web/main_figure.png"
             fit="contain"
           />
         </el-container>

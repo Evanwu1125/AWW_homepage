@@ -27,12 +27,14 @@ import abstract from '../mds/abstract.mdx';
 }
 
 .abstract-card :deep(h1) {
+  font-family: 'Times New Roman', 'Times', serif;
   text-align: center;
   margin-top: 0;
   margin-bottom: 18px;
 }
 
 .abstract-card :deep(p) {
+  font-family: 'Times New Roman', 'Times', serif;
   text-align: justify;
   text-justify: inter-word;
   line-height: 1.8;

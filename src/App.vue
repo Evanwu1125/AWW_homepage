@@ -15,15 +15,14 @@ export default {
 <template>
   <div>
     <div class="top-banner">
-      Everyone is chasing the hype of video reasoning, but we are building an objective,
-      solid, and usable evaluation benchmark.
+      We are exploring the scaling law of GUI synthetic environments for different settings.
     </div>
     <el-container>
       <el-main><Main/></el-main>
     </el-container>
 
     <div class="top-banner">
-      For any question, feel free to contact iamyangcheng7@gmail.com or alexanderwu@fuzhi.ai.
+      For any question, feel free to contact ywu012@connect.hkust-gz.edu.cn.
     </div>
     
     <!-- 回到顶部 -->
@@ -33,8 +32,13 @@ export default {
 
 <style>
 
+body {
+  background: #d3d3d3;
+  font-family: 'Droid Serif', 'Times New Roman', serif;
+}
+
 h1 {
-  font-family: "MyFont", Verdana, sans-serif;
+  font-family: 'Droid Serif', 'Times New Roman', serif;
   letter-spacing: 2px;
   font-size: 28px;
   margin: 0px;
@@ -42,7 +46,7 @@ h1 {
 }
 
 h2, h3, h4, h5, h6 {
-  font-family: "MyFont", Verdana, sans-serif;
+  font-family: 'Droid Serif', 'Times New Roman', serif;
   letter-spacing: 2px;
 }
 
@@ -55,6 +59,7 @@ h2, h3, h4, h5, h6 {
 }
 
 p, li {
+  font-family: 'Droid Serif', 'Times New Roman', serif;
   font-size: 16px;
   line-height: 1.75rem;
 }
@@ -93,12 +98,14 @@ blockquote {
 }
 
 blockquote > p {
+  font-family: 'Droid Serif', 'Times New Roman', serif;
   margin-block-start: 0.5em;
   margin-block-end: 0.5em;
 }
 
 /* 链接颜色装饰 */
 a {
+  font-family: 'Droid Serif', 'Times New Roman', serif;
   color: #3273dc;
   text-decoration: none;
 }
@@ -110,6 +117,7 @@ a:hover {
 }
 
 p > img {
+  font-family: 'Droid Serif', 'Times New Roman', serif;
   width: 80%;
   display: block;
   margin: 0 auto;
@@ -160,9 +168,10 @@ th, td {
   color: #ffffff;
   text-align: center;
   padding: 18px 24px;
-  font-family: "MyFont", Verdana, sans-serif;
+  font-family: 'Droid Serif', 'Times New Roman', serif;
   letter-spacing: 2px;
   font-size: 22px;
+  font-weight: 700;
   line-height: 1.8;
 }
 

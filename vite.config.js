@@ -23,7 +23,7 @@ export default defineConfig({
       ],
     }),
   ],
-  base:'/VRBench_Web',
+  base: '/AWW_homepage/',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))

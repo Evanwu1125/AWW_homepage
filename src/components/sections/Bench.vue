@@ -349,5 +349,6 @@ export default {
 .radar-chart-large {
   height: 850px;
   margin-top: 10px;
+  font-family: 'Times New Roman', 'Times', serif;
 }
 </style>
