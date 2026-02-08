@@ -202,7 +202,7 @@ const toggleDetails = () => {
           <span class="con-cor-text">{{ conAndCorresponding }}</span>
         </el-row>
         <el-row justify="center" class="con-cor-logo">
-          <el-image src="/VRBench_Web/foundation_agent.png" class="con-logo" fit="contain" />
+          <el-image src="/foundation_agent.png" class="con-logo" fit="contain" />
         </el-row>
       </div>
       <div v-else key="mask">
