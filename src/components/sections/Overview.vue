@@ -1,4 +1,5 @@
 <script setup>
+const baseUrl = import.meta.env.BASE_URL
 </script>
 
 <template>
@@ -14,7 +15,7 @@
         <el-container class="image-container">
           <el-image
             class="overview-image"
-            src="/main_figure.png"
+            :src="`${baseUrl}main_figure.png`"
             fit="contain"
           />
         </el-container>

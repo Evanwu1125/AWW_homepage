@@ -1,4 +1,5 @@
 <script setup>
+const baseUrl = import.meta.env.BASE_URL
 const webGroups = [
   {
     id: 'jd',
@@ -7,17 +8,17 @@ const webGroups = [
       {
         id: 'jd-account',
         query: `Create a new account with username 'alex_jones', password 'MySecurePass123!', and phone number '13987654321'.`,
-        video: '/VRBench_Web/outputs/JD/macro_000_00_HOME__ACCOUNT_CREATED_SUCCESS_item_original/recording.mp4',
+        video: `${baseUrl}VRBench_Web/outputs/JD/macro_000_00_HOME__ACCOUNT_CREATED_SUCCESS_item_original/recording.mp4`,
       },
       {
         id: 'jd-review',
         query: `Filter to show only fresh items in the supermarket section, pick the seventh one, leave a 5-star review saying 'These avocados were perfectly ripe and creamy, excellent for guacamole', and submit it.`,
-        video: '/VRBench_Web/outputs/JD/macro_000_00_HOME__REVIEW_SUBMITTED_SUCCESS_item_s7/recording.mp4',
+        video: `${baseUrl}VRBench_Web/outputs/JD/macro_000_00_HOME__REVIEW_SUBMITTED_SUCCESS_item_s7/recording.mp4`,
       },
       {
         id: 'jd-checkout',
         query: 'Buy 3 pieces of the second item priced above $5 from the supermarket section, choose the first option, ship to my usual address with cash on delivery.',
-        video: '/VRBench_Web/outputs/JD/macro_001_00_HOME__CHECKOUT_BUY_NOW_SUCCESS_item_s5/recording.mp4',
+        video: `${baseUrl}VRBench_Web/outputs/JD/macro_001_00_HOME__CHECKOUT_BUY_NOW_SUCCESS_item_s5/recording.mp4`,
       },
     ],
   },
@@ -28,22 +29,22 @@ const webGroups = [
       {
         id: 'gh-branch',
         query: 'Navigate to repositories and filter for private ones, then open the first private repository and create a new branch called feature-auth from the main source.',
-        video: '/VRBench_Web/outputs/github/macro_000_00_HOME__NEW_BRANCH_SUCCESS_item_repo_9/recording.mp4',
+        video: `${baseUrl}VRBench_Web/outputs/github/macro_000_00_HOME__NEW_BRANCH_SUCCESS_item_repo_9/recording.mp4`,
       },
       {
         id: 'gh-pr',
         query: `Find my private repositories, open the first one, create a pull request from the feature branch to main with title 'Add user authentication module', and submit it.`,
-        video: '/VRBench_Web/outputs/github/macro_001_00_HOME__PR_CREATE_SUCCESS_item_repo_9/recording.mp4',
+        video: `${baseUrl}VRBench_Web/outputs/github/macro_001_00_HOME__PR_CREATE_SUCCESS_item_repo_9/recording.mp4`,
       },
       {
         id: 'gh-issue',
         query: `Create a new issue in the first private repository, title it 'Authentication bug in login flow', and submit it.`,
-        video: '/VRBench_Web/outputs/github/macro_001_00_HOME__ISSUE_CREATE_SUCCESS_item_repo_9/recording.mp4',
+        video: `${baseUrl}VRBench_Web/outputs/github/macro_001_00_HOME__ISSUE_CREATE_SUCCESS_item_repo_9/recording.mp4`,
       },
       {
         id: 'gh-profile',
         query: 'Update my profile name to Alex Johnson and save the changes.',
-        video: '/VRBench_Web/outputs/github/macro_002_00_HOME__PROFILE_UPDATE_SUCCESS_item_original/recording.mp4',
+        video: `${baseUrl}VRBench_Web/outputs/github/macro_002_00_HOME__PROFILE_UPDATE_SUCCESS_item_original/recording.mp4`,
       },
     ],
   },
@@ -54,22 +55,22 @@ const webGroups = [
       {
         id: 'medium-schedule',
         query: `Start writing a new story, set the title to 'The Midnight Garden', write the body content 'Under the pale moonlight, the old garden whispered secrets only the night could hear. Roses bloomed with silver petals, and the fountain sang a melody of forgotten dreams.', enable publishing, open publish options, continue to confirmation, schedule it for November 18, 2021 at 9:18 AM, and confirm the schedule.`,
-        video: '/VRBench_Web/outputs/medium/macro_000_00_HOME__SCHEDULE_POST_SUCCESS_item_original/recording.mp4',
+        video: `${baseUrl}VRBench_Web/outputs/medium/macro_000_00_HOME__SCHEDULE_POST_SUCCESS_item_original/recording.mp4`,
       },
       {
         id: 'medium-subscription',
         query: 'Upgrade to the monthly membership plan using card payment with number 4532123456789012, name Alex Johnson, and CVV 789, then complete the purchase.',
-        video: '/VRBench_Web/outputs/medium/macro_000_00_HOME__SUBSCRIPTION_SUCCESS_item_original/recording.mp4',
+        video: `${baseUrl}VRBench_Web/outputs/medium/macro_000_00_HOME__SUBSCRIPTION_SUCCESS_item_original/recording.mp4`,
       },
       {
         id: 'medium-profile',
         query: 'Update my profile name to John Doe.',
-        video: '/VRBench_Web/outputs/medium/macro_001_00_HOME__PROFILE_UPDATE_SUCCESS_item_original/recording.mp4',
+        video: `${baseUrl}VRBench_Web/outputs/medium/macro_001_00_HOME__PROFILE_UPDATE_SUCCESS_item_original/recording.mp4`,
       },
       {
         id: 'medium-publish',
         query: `Write and publish a story titled 'The Future of Artificial Intelligence' with the body: 'Artificial intelligence is rapidly transforming our world. From self-driving cars to advanced healthcare diagnostics, AI is becoming an integral part of our daily lives. As we look to the future, the potential of AI seems limitless, but it also raises important ethical questions. How can we ensure that AI is developed and used responsibly? This article explores the current state of AI and its future implications.'`,
-        video: '/VRBench_Web/outputs/medium/macro_001_00_HOME__PUBLISH_POST_SUCCESS_item_original/recording.mp4',
+        video: `${baseUrl}VRBench_Web/outputs/medium/macro_001_00_HOME__PUBLISH_POST_SUCCESS_item_original/recording.mp4`,
       },
     ],
   },
@@ -80,12 +81,12 @@ const webGroups = [
       {
         id: 'skyscanner-booking',
         query: 'Find American Airlines flights from LHR to JFK, traveling on September 16, 2029 in economy class. Book the American Airlines flight that comes up in the search results, choose standard baggage and standard seat, then complete the booking with first name Alex, last name Johnson, email alex.j@email.com, and card number 4111111111111111. Accept the terms and confirm the booking.',
-        video: '/VRBench_Web/outputs/skyscanner/macro_001_00_HOME__BOOKING_COMPLETE_DIRECT_item_flight_3/recording.mp4',
+        video: `${baseUrl}VRBench_Web/outputs/skyscanner/macro_001_00_HOME__BOOKING_COMPLETE_DIRECT_item_flight_3/recording.mp4`,
       },
       {
         id: 'skyscanner-alert',
         query: `Find flights from London Heathrow to New York JFK for January 22, 2029 in economy class, then search for Aer Lingus flights in the results, open the matching one, and create a price alert named 'Aer Lingus JFK Alert' with email 'traveler@example.com'.`,
-        video: '/VRBench_Web/outputs/skyscanner/macro_088_00_HOME__PRICE_ALERT_CREATED_item_flight_9/recording.mp4',
+        video: `${baseUrl}VRBench_Web/outputs/skyscanner/macro_088_00_HOME__PRICE_ALERT_CREATED_item_flight_9/recording.mp4`,
       },
     ],
   },
@@ -96,12 +97,12 @@ const webGroups = [
       {
         id: 'twitter-tweet',
         query: `Compose and post a tweet that says 'Excited to share that I just completed my 100th day of coding! #100DaysOfCode #coding'.`,
-        video: '/VRBench_Web/outputs/twitter/macro_000_00_HOME__TWEET_POST_SUCCESS_item_original/recording.mp4',
+        video: `${baseUrl}VRBench_Web/outputs/twitter/macro_000_00_HOME__TWEET_POST_SUCCESS_item_original/recording.mp4`,
       },
       {
         id: 'twitter-profile',
         query: `Update my profile bio to 'Experienced software engineer specializing in full-stack web development and cloud architecture' and change my display name to 'Alex Chen', then save the changes.`,
-        video: '/VRBench_Web/outputs/twitter/macro_001_00_HOME__PROFILE_UPDATE_SUCCESS_item_original/recording.mp4',
+        video: `${baseUrl}VRBench_Web/outputs/twitter/macro_001_00_HOME__PROFILE_UPDATE_SUCCESS_item_original/recording.mp4`,
       },
     ],
   },
@@ -112,12 +113,12 @@ const webGroups = [
       {
         id: 'youtube-like',
         query: 'From trending videos filtered to show ones longer than 3 minutes, watch the fourth video and like it.',
-        video: '/VRBench_Web/outputs/youtube/macro_001_00_HOME__WATCH_LIKE_SUCCESS_item_v4/recording.mp4',
+        video: `${baseUrl}VRBench_Web/outputs/youtube/macro_001_00_HOME__WATCH_LIKE_SUCCESS_item_v4/recording.mp4`,
       },
       {
         id: 'youtube-comment',
         query: `Go to trending videos, allow location access, filter for videos longer than 2000 seconds, open the first one, then post this comment and submit it: 'This music is so calming, perfect for studying. Thanks for uploading!'`,
-        video: '/VRBench_Web/outputs/youtube/macro_001_00_HOME__WATCH_COMMENT_SUCCESS_item_v3/recording.mp4',
+        video: `${baseUrl}VRBench_Web/outputs/youtube/macro_001_00_HOME__WATCH_COMMENT_SUCCESS_item_v3/recording.mp4`,
       },
     ],
   },

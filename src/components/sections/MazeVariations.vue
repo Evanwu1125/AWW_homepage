@@ -1,4 +1,5 @@
 <script setup>
+const baseUrl = import.meta.env.BASE_URL
 </script>
 
 <template>
@@ -14,7 +15,7 @@
         <el-container class="maze-container">
           <el-image
             class="maze-image"
-            src="/domain_vary.jpg"
+            :src="`${baseUrl}domain_vary.jpg`"
             fit="contain"
           />
         </el-container>

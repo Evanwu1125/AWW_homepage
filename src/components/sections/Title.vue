@@ -10,8 +10,11 @@ const HfIcon = {
   },
 }
 
+// Base URL for assets
+const baseUrl = import.meta.env.BASE_URL
+
 // Logo path (set to '' to hide)
-const logo = '/logo.png'
+const logo = `${baseUrl}logo.png`
 
 // Title configuration
 const titleMain = 'AutoWebWorld'
@@ -202,7 +205,7 @@ const toggleDetails = () => {
           <span class="con-cor-text">{{ conAndCorresponding }}</span>
         </el-row>
         <el-row justify="center" class="con-cor-logo">
-          <el-image src="/foundation_agent.png" class="con-logo" fit="contain" />
+          <el-image :src="`${baseUrl}foundation_agent.png`" class="con-logo" fit="contain" />
         </el-row>
       </div>
       <div v-else key="mask">
