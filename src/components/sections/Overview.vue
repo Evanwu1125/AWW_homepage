@@ -14,7 +14,7 @@
         <el-container class="image-container">
           <el-image
             class="overview-image"
-            src="/VRBench_Web/main_figure.png"
+            src="/main_figure.png"
             fit="contain"
           />
         </el-container>

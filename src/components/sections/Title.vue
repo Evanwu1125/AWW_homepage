@@ -11,7 +11,7 @@ const HfIcon = {
 }
 
 // Logo path (set to '' to hide)
-const logo = '/VRBench_Web/logo.png'
+const logo = '/logo.png'
 
 // Title configuration
 const titleMain = 'AutoWebWorld'
