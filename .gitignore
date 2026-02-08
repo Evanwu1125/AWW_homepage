@@ -1,7 +1,14 @@
-/node_modules
-/distdocs/
+# Dependencies
+node_modules/
+
+# Build outputs
 dist/
 docs/
-dist/
-docs/
-dist/
+
+# OS files
+.DS_Store
+*.log
+
+# IDE
+.vscode/
+.idea/
