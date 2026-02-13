@@ -94,7 +94,7 @@ const authors = [
 const addresses = [
   { addressFlag: '1', name: 'Hong Kong University of Science and Technology (GuangZhou)', icon: '', homepage: '' },
   { addressFlag: '2', name: 'DeepWisdom', icon: '', homepage: '' },
-  { addressFlag: '3', name: 'Beijing University', icon: '', homepage: '' },
+  { addressFlag: '3', name: 'Peking University', icon: '', homepage: '' },
   { addressFlag: '4', name: 'Université de Montréal \& Mila', icon: '', homepage: '' },
 ]
 
