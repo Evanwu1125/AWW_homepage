@@ -2,7 +2,17 @@
 export default {
   data() {
     return {
-      bibtex: [],
+      bibtex: [
+        '@misc{wu2026autowebworldsynthesizinginfiniteverifiable,',
+        '      title={AutoWebWorld: Synthesizing Infinite Verifiable Web Environments via Finite State Machines}, ',
+        '      author={Yifan Wu and Yiran Peng and Yiyu Chen and Jianhao Ruan and Zijie Zhuang and Cheng Yang and Jiayi Zhang and Man Chen and Yenchi Tseng and Zhaoyang Yu and Liang Chen and Yuyao Zhai and Bang Liu and Chenglin Wu and Yuyu Luo},',
+        '      year={2026},',
+        '      eprint={2602.14296},',
+        '      archivePrefix={arXiv},',
+        '      primaryClass={cs.AI},',
+        '      url={https://arxiv.org/abs/2602.14296}, ',
+        '}',
+      ],
     }
   },
   methods: {
