@@ -74,7 +74,7 @@ const authors = [
     name: 'Bang Liu',
     icon: '',
     homepage: '',
-    addressFlag: '4',
+    addressFlag: '4†',
   },
   {
     name: 'Chenglin Wu',
